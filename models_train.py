@@ -57,7 +57,7 @@ def main(libri_dir=c.DATASET_DIR):
         # output.shape = (3, 383, 32, 32, 3) something like this
         # explanation  = (batch_size, num_frames, width, height, channels)
         logging.info('x.shape before reshape: {}'.format(x.shape))
-        x = np.reshape(x, (batch_size * num_frames, b.shape[2], b.shape[2], b.shape[3]))
+        x = np.reshape(x, (3 * batch_size * num_frames, b.shape[2], b.shape[2], b.shape[3]))
         logging.info('x.shape after  reshape: {}'.format(x.shape))
 
         # we don't need to use the targets y, because we know by the convention that:
